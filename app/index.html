@@ -5,14 +5,13 @@
   <title>ng-coursera</title>
 </head>
 <body>
-  <section ng-controller="introCtlr">
-    <h1>{{title}}</h1>
-    <p>{{desc}}</p>
+    <a ui-sref="home">Home</a>
     <a href="module1-solution">Module 1 Solution</a>
-  </section>
-
+    <a ui-sref="module2-solution">Module 2 Solution</a>
+  <ui-view></ui-view>
 
 <script src="bower_components/angular/angular.js"></script>
+<script src="../node_modules/angular-ui-router/release/angular-ui-router.js"></script>
 <script src="scripts/app.js"></script>
 </body>
 </html>
