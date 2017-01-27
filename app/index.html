@@ -3,15 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <title>ng-coursera</title>
+  <link rel="stylesheet" href="styles/bootstrap.min.css">
 </head>
 <body>
     <a ui-sref="home">Home</a>
-    <a href="module1-solution">Module 1</a>
+    <a ui-sref="module1-solution">Module 1</a>
     <a ui-sref="module2-solution">Module 2</a>
   <ui-view></ui-view>
 
-<script src="../node_modules/angular/angular.js"></script>
-<script src="../node_modules/angular-ui-router/release/angular-ui-router.js"></script>
+<script src="/node_modules/angular/angular.js"></script>
+<script src="/node_modules/angular-ui-router/release/angular-ui-router.js"></script>
+<script src="solutions/module1/module.js"></script>
 <script src="solutions/module2/module.js"></script>
 <script src="scripts/app.js"></script>
 </body>

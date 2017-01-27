@@ -1,10 +1,19 @@
 (function(){
-  angular.module('courseraApp', ['ui.router', 'ShoppingListCheckOff'])
+  angular.module('courseraApp', [
+    'ui.router',
+    'LunchCheck',
+    'ShoppingListCheckOff'
+  ])
     .config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider){
       $stateProvider
         .state('home', {
           url: '/',
-          templateUrl: 'solutions/intro.html'
+          templateUrl: 'solutions/intro/index.html'
+        })
+        .state('module1-solution', {
+          url: '/module1-solution',
+          templateUrl: 'solutions/module1/index.html',
+          controller: 'module1 as ctrl'
         })
         .state('module2-solution', {
           url: '/module2-solution',

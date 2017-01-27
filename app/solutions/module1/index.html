@@ -1,0 +1,21 @@
+<style>
+.moduleNumber {float:right;}
+</style>
+  <lunch-check>
+   <div class="container">
+     <h2 class="moduleNumber">{{ :: ctrl.title}}</h2>
+     <h1>Lunch Checker</h1>
+
+         <div class="form-group">
+             <input ng-model="ctrl.lunchInput" type="text"
+             placeholder="list (comma separated) dishes you usually have for lunch"
+             class="form-control">
+         </div>
+         <div class="form-group">
+             <button class="btn btn-default" ng-click="ctrl.lunchCheck()">Check</button>
+         </div>
+         <div class="form-group message">
+           <strong>{{ctrl.message}}</strong>
+         </div>
+   </div>
+  </lunch-check>
