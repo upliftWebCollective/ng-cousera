@@ -2,12 +2,16 @@
 angular.module('ShoppingListCheckOff', []);
 
 angular.module('ShoppingListCheckOff')
-  .service('ListService', ListService)
   .controller('Module2', Module2Parent)
+  .controller('ToBuyController', ToBuyController)
+  .controller('AlreadyBoughtController', AlreadyBoughtController)
+  .directive('toBuy', toBuyDirective)
+  .directive('alreadyBought', boughtDirective)
+  .service('ListService', ListService)
   .factory('CompleteFactory', CompleteFactory)
 
-  Module2Parent.$inject=['$scope', 'ListService', 'CompleteFactory']
-  function Module2Parent($scope, ListService, CompleteFactory){
+  Module2Parent.$inject=['ListService', 'CompleteFactory']
+  function Module2Parent(ListService, CompleteFactory){
     var vm = this;
     vm.title = "Module 2 Solution";
     vm.shoppingList = ListService.getItems();
@@ -19,8 +23,31 @@ angular.module('ShoppingListCheckOff')
         if(vm.shoppingList.length === 0){vm.emptyList = true;}
         if(vm.completeList.length >= 1){vm.somethingBought = true;}
     }
-    console.log(ListService.items);
   }
+  ToBuyController.$inject = ['$scope', 'ListService', 'CompleteFactory'];
+  function ToBuyController($scope, ListService, CompleteFactory){
+    vm = this;
+    vm.buyScope = 'Hi Buy Controller';
+  }
+  AlreadyBoughtController.$inject = ['$scope', 'ListService', 'CompleteFactory'];
+  function AlreadyBoughtController($scope, ListService, CompleteFactory){
+    vm = this;
+    vm.buyScoper = 'Hi Bought Controller';
+  }
+
+  function toBuyDirective(){
+    return {  restrict: 'EA',
+              templateUrl: 'solutions/module2/views/buy.html',
+              controller: 'ToBuyController as buy'
+            };
+  }
+  function boughtDirective(){
+    return {  restrict: 'EA',
+              templateUrl: 'solutions/module2/views/bought.html',
+              controller: 'AlreadyBoughtController as bought'
+            };
+  }
+
   function ListService(){
     var service = this;
     var items = [

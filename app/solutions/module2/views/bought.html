@@ -1,0 +1,12 @@
+<div class="debug">
+  {{bought.buyScoper}}
+</div>
+<!-- Already Bought List -->
+<div class="col-md-6">
+ <h2>Already Bought:</h2>
+ <ul>
+   <li ng-repeat="bought in ctrl.completeList">
+     Bought {{bought.quantity}} {{bought.name}}
+   </li> </ul>
+ <div ng-if="!ctrl.somethingBought" class="emptyMessage">Nothing bought yet.</div>
+</div>
