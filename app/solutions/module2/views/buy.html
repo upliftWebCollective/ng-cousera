@@ -3,7 +3,7 @@
  <ul>
 
    <li ng-repeat="item in ctrl.shoppingList track by $index">
-     Buy {{item.quantity}} {{item.name}} <span>{{item.id}}</span>
+     Buy {{item.quantity}} {{item.name}}
      <button ng-click="ctrl.buyItem($index)" class="btn btn-default">
        <span class="glyphicon glyphicon-ok"></span> Bought
      </button>
