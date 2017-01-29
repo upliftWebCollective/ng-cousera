@@ -27,12 +27,12 @@ angular.module('ShoppingListCheckOff')
   ToBuyController.$inject = ['$scope', 'ListService', 'CompleteFactory'];
   function ToBuyController($scope, ListService, CompleteFactory){
     vm = this;
-    vm.buyScope = 'Hi Buy Controller';
+    vm.title = 'To Buy';
   }
   AlreadyBoughtController.$inject = ['$scope', 'ListService', 'CompleteFactory'];
   function AlreadyBoughtController($scope, ListService, CompleteFactory){
     vm = this;
-    vm.buyScoper = 'Hi Bought Controller';
+    vm.title = 'Already Bought';
   }
 
   function toBuyDirective(){

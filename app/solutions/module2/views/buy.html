@@ -1,13 +1,9 @@
-<div class="debug">
-  {{buy.buyScope}}
-</div>
-<!-- To Buy List -->
 <div class="col-md-6">
- <h2>To Buy:</h2>
+ <h2>{{buy.title}}</h2>
  <ul>
 
    <li ng-repeat="item in ctrl.shoppingList track by $index">
-     ({{$index}})Buy {{item.quantity}} {{item.name}} <span>{{item.id}}</span>
+     Buy {{item.quantity}} {{item.name}} <span>{{item.id}}</span>
      <button ng-click="ctrl.buyItem($index)" class="btn btn-default">
        <span class="glyphicon glyphicon-ok"></span> Bought
      </button>
