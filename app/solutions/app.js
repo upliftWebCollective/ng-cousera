@@ -2,7 +2,8 @@
   angular.module('courseraApp', [
     'ui.router',
     'LunchCheck',
-    'ShoppingListCheckOff'
+    'ShoppingListCheckOff',
+    'NarrowItDown'
   ])
     .config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider){
       $stateProvider
@@ -19,6 +20,11 @@
           url: '/module2-solution',
           templateUrl: 'solutions/module2/index.html',
           controller: 'Module2 as ctrl'
+        })
+        .state('module3-solution', {
+          url: '/module3-solution',
+          templateUrl: 'solutions/module3/index.html',
+          controller: 'Module3 as ctrl'
         })
 
     $urlRouterProvider.otherwise('/')
