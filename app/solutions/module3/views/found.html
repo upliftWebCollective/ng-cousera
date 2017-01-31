@@ -1,0 +1,30 @@
+<style>
+  .itemList{
+    list-style-type: none;
+    padding: 0px;
+  }
+  .itemBox {
+    background: #eaea10;
+    padding: 1vw;
+    border-bottom: 1px solid #eaeaFF;
+  }
+  .searchString {
+    text-align: center;
+    padding: 2vh;
+    background: #eaea22;
+  }
+</style>
+<div class="form-group">
+  <input ng-model="found.userInput" type="text" placeholder="search term" class="form-control">
+  <p class="searchString"><strong>{{found.userInput}}</strong></p>
+</div>
+<div class="form-group narrow-button">
+  <button class="btn btn-primary" ng-click="found.displayMatched(found.userInput)">Narrow It Down For Me!</button>
+</div>
+<!-- <found-items found-items="...." on-remove="...."> -->
+<ul class="itemList">
+  <li class="itemBox" ng-repeat="item in found.found">
+    <h4>{{item.name}}</h4>
+    {{item.description}}
+  </li>
+</ul>
