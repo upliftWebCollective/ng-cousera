@@ -1,0 +1,31 @@
+<style>
+narrow-template {
+  display: block;
+  clear: both;
+}
+narrow-down .narrow-button {
+  text-align: center;
+  padding: 10px;
+}
+.btn-narrow {
+  padding: 10px;
+}
+
+.btn-narrow {
+    padding: 25px;
+    background: #eaea40;
+}
+</style>
+<narrow-template>
+<h1>Narrow Down Your Chinese Menu Choice</h1>
+<div class="form-group">
+  <input ng-model="narrow.userInput" type="text" placeholder="Enter your search term(s)" class="form-control">
+  <p class="searchString"><strong>{{narrow.userInput}}</strong></p>
+</div>
+<div class="form-group narrow-button">
+  <button class="btn-narrow" ng-click="narrow.displayMatched(narrow.userInput)">Narrow It Down For Me!</button>
+</div>
+
+
+<found-items item-loaded="narrow.found" on-remove="narrow.removeItem(index)"></found-items>
+</narrow-template>

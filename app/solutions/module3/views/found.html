@@ -13,18 +13,21 @@
     padding: 2vh;
     background: #eaea22;
   }
+  found-template{
+    background: #eaea10;
+    display: block;
+  }
 </style>
-<div class="form-group">
-  <input ng-model="found.userInput" type="text" placeholder="search term" class="form-control">
-  <p class="searchString"><strong>{{found.userInput}}</strong></p>
-</div>
-<div class="form-group narrow-button">
-  <button class="btn btn-primary" ng-click="found.displayMatched(found.userInput)">Narrow It Down For Me!</button>
-</div>
-<!-- <found-items found-items="...." on-remove="...."> -->
+<found-template>
+  <h1>Results ({{result.itemLoaded.length}})</h1>
 <ul class="itemList">
-  <li class="itemBox" ng-repeat="item in found.found">
+  <li class="itemBox" ng-repeat="item in result.itemLoaded track by $index">
     <h4>{{item.name}}</h4>
     {{item.description}}
+    <button class="btn btn-primary"
+            ng-click="result.onRemove({index: $index})">
+            Don't want this
+    </button>
   </li>
 </ul>
+</found-template>
