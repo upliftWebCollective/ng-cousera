@@ -3,7 +3,8 @@
     'ui.router',
     'LunchCheck',
     'ShoppingListCheckOff',
-    'NarrowItDown'
+    'NarrowItDown',
+    'MenuApp'
   ])
     .config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider){
       $stateProvider
@@ -25,6 +26,11 @@
           url: '/module3-solution',
           templateUrl: 'solutions/module3/index.html',
           controller: 'Module3 as ctrl'
+        })
+        .state('module4-solution', {
+          url: '/module4-solution',
+          templateUrl: 'solutions/module4/index.html',
+          controller: 'Module4 as ctrl'
         })
 
     $urlRouterProvider.otherwise('/')
