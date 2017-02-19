@@ -8,7 +8,9 @@ angular.module('MenuApp')
   function Module4Parent(MenuDataService){
     var vm = this;
     vm.title = "Module 4 Solution";
-    vm.allCategories = MenuDataService.getAllCategories();
+    vm.placeholderCat = "A";
+    vm.categoriesPromise = MenuDataService.getAllCategories();
+    vm.getItemsPromise = MenuDataService.getItemsForCategory(vm.placeholderCat);
   }
 
 }) ();

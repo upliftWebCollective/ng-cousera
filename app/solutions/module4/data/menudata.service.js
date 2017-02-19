@@ -18,9 +18,20 @@ angular.module('MenuDataProducer')
             /*DEBUG*/console.log(" All Categories Data: ", categoriesResults);
         return categoriesResults;
          })
-        .catch(function(error){console.log('Categories Results Data load error');});
+        .catch(function(error){console.log('All Categories Results Data load error');});
 
       return categoriesResults;
+    }
+    service.getItemsForCategory = function(categoryShortName) {
+      var categoryItemsResults = [];
+      $http.get(APIBasePath + menuItemsPath + categoryShortName)
+        .then(function(response){
+          categoryItemsResults = response.data.menu_items;
+          /*DEBUG*/console.log("Single Categories Data: ", categoryItemsResults);
+        return categoryItemsResults;
+        })
+        .catch(function(error){console.log('Single Category Results Data load error');});
+        return categoryItemsResults;
     }
   }
 
