@@ -18,7 +18,6 @@ angular.module('MenuDataProducer')
             angular.forEach(categoriesResults, function(value, key) {
               this.push({'category': value.short_name});
             },categoriesExtracted);
-            /*DEBUG*/console.log(" All Categories Data: ", categoriesResults);
         return categoriesExtracted;
          })
         .catch(function(error){console.log('All Categories Results Data load error');});

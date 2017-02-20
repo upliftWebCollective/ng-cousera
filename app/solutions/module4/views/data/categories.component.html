@@ -3,13 +3,19 @@ category-section {
   display: block;
   background-color: #69b810;
   padding: 10px;
+  text-align: center;
 }
+category-section select {
+  width: 25vw;
+  font-size: 1.5em;
+}
+category-section strong {display: block; color: #eaea10;}
 </style>
 <category-section>
   <h1>List of Categories</h1>
-  <ul class="itemList">
-    <li ng-repeat="item in $cat.categories | orderBy: $cat.alpha">
-      <h4>{{item.category}}</h4>
-    </li>
-  </ul>
+  <select ng-model="selectedName" ng-options="x.category for x in $cat.categories | orderBy: $cat.alpha">
+    <option value=''>- Choose Category -</option>
+  </select>
+  <strong ng-if="!selectedName">Nothing selected</strong>
+  <p ng-if="selectedName">Category selected: {{selectedName.category}}</p>
 </category-section>

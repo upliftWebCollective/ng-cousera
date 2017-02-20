@@ -14,7 +14,7 @@ angular.module('categories')
 
 categoriesController.$inject = [];
 function categoriesController(){
-
+  $cat = this;
 }
 
 }) ();
