@@ -1,16 +1,13 @@
 (function(){
-angular.module('MenuApp', ['routes', 'MenuData']);
+angular.module('MenuApp', ['MenuData']);
 // 'Data' is renamed to 'MenuData'
 angular.module('MenuApp')
   .controller('Module4', Module4Parent)
 
-  Module4Parent.$inject=['MenuDataService'];
-  function Module4Parent(MenuDataService){
+  Module4Parent.$inject=[];
+  function Module4Parent(){
     var vm = this;
     vm.title = "Module 4 Solution";
-    vm.placeholderCat = "A";
-    vm.categoriesPromise = MenuDataService.getAllCategories();
-    vm.getItemsPromise = MenuDataService.getItemsForCategory(vm.placeholderCat);
   }
 
 }) ();

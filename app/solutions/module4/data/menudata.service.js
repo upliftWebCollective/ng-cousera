@@ -11,16 +11,18 @@ angular.module('MenuDataProducer')
   function MenuDataService($http, APIBasePath, categoriesPath, menuItemsPath){
     var service = this;
     service.getAllCategories = function(){
-      var categoriesResults = [];
+      var categoriesExtracted=[];
       $http.get(APIBasePath + categoriesPath)
         .then(function (response) {
-            categoriesResults = response.data;
+            var categoriesResults = response.data;
+            angular.forEach(categoriesResults, function(value, key) {
+              this.push({'category': value.short_name});
+            },categoriesExtracted);
             /*DEBUG*/console.log(" All Categories Data: ", categoriesResults);
-        return categoriesResults;
+        return categoriesExtracted;
          })
         .catch(function(error){console.log('All Categories Results Data load error');});
-
-      return categoriesResults;
+      return categoriesExtracted;
     }
     service.getItemsForCategory = function(categoryShortName) {
       var categoryItemsResults = [];
