@@ -2,15 +2,17 @@
 angular.module('categories', []);
 
 angular.module('categories')
-  .component('categories', {
-    templateUrl: 'data/categories.component.html',
+  .component('categoriesComponent', {
+    templateUrl: 'solutions/module4/views/data/categories.component.html',
     controller: "categoriesController as $cat",
     bindings: {
+      alpha: '@',
       categories: '<'
     }
   })
+  .controller('categoriesController', categoriesController)
 
-categoriesController.$inject = ['']
+categoriesController.$inject = [];
 function categoriesController(){
 
 }

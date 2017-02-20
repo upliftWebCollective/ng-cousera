@@ -7,4 +7,9 @@ category-section {
 </style>
 <category-section>
   <h1>List of Categories</h1>
+  <ul class="itemList">
+    <li ng-repeat="item in $cat.categories | orderBy: $cat.alpha">
+      <h4>{{item.category}}</h4>
+    </li>
+  </ul>
 </category-section>
