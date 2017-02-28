@@ -12,9 +12,13 @@ angular.module('categories')
   })
   .controller('categoriesController', categoriesController)
 
-categoriesController.$inject = [];
-function categoriesController(){
+categoriesController.$inject = ['$state'];
+function categoriesController($state){
   $cat = this;
+  $cat.selectedName = '';
+  $cat.change = function(){
+    $state.go('module4-solution.categories.catItems', {catID:$cat.selectedName.category});
+  }
 }
 
 }) ();

@@ -13,9 +13,11 @@ category-section strong {display: block; color: #eaea10;}
 </style>
 <category-section>
   <h1>List of Categories</h1>
-  <select ng-model="selectedName" ng-options="x.category for x in $cat.categories | orderBy: $cat.alpha">
+  <select ng-model="$cat.selectedName"
+          ng-options="x.category for x in $cat.categories | orderBy: $cat.alpha"
+          ng-change="$cat.change()">
     <option value=''>- Choose Category -</option>
   </select>
-  <strong ng-if="!selectedName">Nothing selected</strong>
-  <p ng-if="selectedName">Category selected: {{selectedName.category}}</p>
+  <strong ng-if="!$cat.selectedName">Nothing selected</strong>
+  <p ng-if="$cat.selectedName">Category selected: {{$cat.selectedName.category}}</p>
 </category-section>
