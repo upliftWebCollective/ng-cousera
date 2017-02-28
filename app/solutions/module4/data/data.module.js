@@ -9,12 +9,10 @@ angular.module('MenuData')
   })
   .controller('ModuleDataCtrl', ModuleDataCtrl)
 
-  ModuleDataCtrl.$inject = ['MenuDataService']
-  function ModuleDataCtrl(MenuDataService){
+  ModuleDataCtrl.$inject = ['MenuDataService', '$timeout']
+  function ModuleDataCtrl(MenuDataService, $timeout){
     $main = this;
-    $main.placeholderCat = "A";
     $main.categoriesPromise = MenuDataService.getAllCategories();
-    $main.getItemsPromise = MenuDataService.getItemsForCategory($main.placeholderCat);
   }
 
 }) ();

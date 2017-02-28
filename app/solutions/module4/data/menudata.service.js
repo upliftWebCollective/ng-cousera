@@ -27,8 +27,11 @@ angular.module('MenuDataProducer')
       var categoryItemsResults = [];
       $http.get(APIBasePath + menuItemsPath + categoryShortName)
         .then(function(response){
-          categoryItemsResults = response.data.menu_items;
-          /*DEBUG*/console.log("Single Categories Data: ", categoryItemsResults);
+          localResults = response.data.menu_items;
+          // /*DEBUG*/console.log("localResults: ", localResults);
+          angular.forEach(localResults, function(value, key) {
+            this.push(value);
+          },categoryItemsResults);
         return categoryItemsResults;
         })
         .catch(function(error){console.log('Single Category Results Data load error');});

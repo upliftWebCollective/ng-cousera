@@ -15,6 +15,22 @@ angular.module('MenuApp')
       url: '/categories',
       templateUrl: 'solutions/module4/views/data/categories.html',
     })
+    .state('module4-solution.categories.catItems',{
+      url: '/{catID}',
+      templateUrl: 'solutions/module4/views/data/items.html',
+      controller: ['itemLoaded', '$stateParams',
+        function(itemLoaded, $stateParams){
+          $loaded = this;
+          $loaded.itemLoaded = itemLoaded;
+        }],
+        controllerAs: "$loaded",
+      resolve: {
+        itemLoaded: ['$stateParams', 'MenuDataService',
+                  function($stateParams, MenuDataService){
+                    return MenuDataService.getItemsForCategory($stateParams.catID);
+                  }]
+      }
+    })
   }
 
 
