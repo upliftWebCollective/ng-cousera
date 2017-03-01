@@ -27,11 +27,8 @@
           templateUrl: 'solutions/module3/index.html',
           controller: 'Module3 as ctrl'
         })
-        .state('module4-solution', {
-          url: '/module4-solution',
-          templateUrl: 'solutions/module4/index.html',
-          controller: 'Module4 as ctrl'
-        })
+        // State for module4 has been moved to 'solutions/module4/routes.js'
+        // This is to complete the assignment as instructed.
 
     $urlRouterProvider.otherwise('/')
   }])

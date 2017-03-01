@@ -1,6 +1,6 @@
 (function(){
-angular.module('MenuApp', ['routes', 'MenuData']);
-
+angular.module('MenuApp', ['MenuData']);
+// 'Data' is renamed to 'MenuData'
 angular.module('MenuApp')
   .controller('Module4', Module4Parent)
 

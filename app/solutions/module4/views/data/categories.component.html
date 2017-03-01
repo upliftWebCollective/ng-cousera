@@ -1,0 +1,21 @@
+<style>
+category-section {
+  display: block;
+  background-color: #69b810;
+  padding: 10px;
+  text-align: center;
+}
+category-section select {
+  width: 25vw;
+  font-size: 1.5em;
+}
+category-section strong {display: block; color: #eaea10;}
+</style>
+<category-section>
+  <h1>List of Categories</h1>
+  <select ng-model="$cat.selectedName"
+          ng-options="x.category for x in $cat.categories | orderBy: $cat.alpha"
+          ng-change="$cat.change()">
+    <option value=''>- Choose Category -</option>
+  </select>
+</category-section>

@@ -1,0 +1,33 @@
+<style>
+.itemList{
+  list-style-type: none;
+  padding: 0px;
+}
+.itemBox {
+  background: #eaea10;
+  padding: 1vw;
+  border-bottom: 1px solid #eaeaFF;
+}
+category-section {
+  display: block;
+  background-color: #69b810;
+  padding: 10px;
+  text-align: center;
+}
+category-section select {
+  width: 25vw;
+  font-size: 1.5em;
+}
+category-section strong {display: block; color: #eaea10;}
+</style>
+<items-results>
+  <ul class="itemList">
+    <li class="itemBox" ng-repeat="item in $item.items">
+      <h1>{{item.name}}</h1>
+      <p>{{item.description}}</p>
+      <p><strong>{{item.short_name}}</strong></p>
+      <p><strong>Small: </strong>{{item.price_small | currency:"$"}}
+        <strong>Large: </strong>{{item.price_large | currency:"$"}}</p>
+    </li>
+  </ul>
+</items-results>
