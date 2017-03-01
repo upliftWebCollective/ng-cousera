@@ -12,11 +12,11 @@ angular.module('MenuApp')
       controller: 'Module4 as ctrl'
     })
     .state('module4-solution.categories',{
-      url: '/categories',
+      url: '/categories/',
       templateUrl: 'solutions/module4/views/data/categories.html',
     })
     .state('module4-solution.categories.catItems',{
-      url: '/{catID}',
+      url: '{catID}/show',
       templateUrl: 'solutions/module4/views/data/items.html',
       controller: ['itemLoaded', '$stateParams',
         function(itemLoaded, $stateParams){
@@ -31,6 +31,7 @@ angular.module('MenuApp')
                   }]
       }
     })
+    $urlRouterProvider.when('/module4-solution/categories', '/module4-solution/categories/');
   }
 
 
