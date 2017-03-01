@@ -17,7 +17,11 @@ function categoriesController($state){
   $cat = this;
   $cat.selectedName = '';
   $cat.change = function(){
-    $state.go('module4-solution.categories.catItems', {catID:$cat.selectedName.category});
+    if($cat.selectedName == null) {
+      $state.go('module4-solution.categories');
+    }else {
+      $state.go('module4-solution.categories.catItems', {catID:$cat.selectedName.category});
+    }
   }
 }
 

@@ -16,5 +16,6 @@ category-section strong {display: block; color: #eaea10;}
   <select ng-model="$cat.selectedName"
           ng-options="x.category for x in $cat.categories | orderBy: $cat.alpha"
           ng-change="$cat.change()">
+    <option value=''>- Choose Category -</option>
   </select>
 </category-section>
