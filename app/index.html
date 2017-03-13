@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <title>ng-coursera</title>
   <link rel="stylesheet" href="styles/bootstrap.min.css">
+
 </head>
 <body>
     <a ui-sref="home">Home</a>
@@ -11,6 +12,8 @@
     <a ui-sref="module2-solution">Module 2</a>
     <a ui-sref="module3-solution">Module 3</a>
     <a ui-sref="module4-solution">Module 4</a>
+    <a ui-sref="module5-solution">Module 5</a>
+
 
 
   <ui-view></ui-view>
@@ -27,6 +30,25 @@
     <script src="solutions/module4/data/menudata.service.js"></script>
       <script src="solutions/module4/data/items.component.js"></script>
       <script src="solutions/module4/data/categories.component.js"></script>
+<!-- Module 5 -->
+<script src="solutions/module5/src/restaurant.module.js"></script>
+      <!-- Common Module -->
+      <script src="solutions/module5/src/common/common.module.js"></script>
+      <script src="solutions/module5/src/common/loading/loading.component.js"></script>
+      <script src="solutions/module5/src/common/loading/loading.interceptor.js"></script>
+      <script src="solutions/module5/src/common/menu.service.js"></script>
+
+      <!-- Public Module -->
+      <script src="solutions/module5/src/public/public.module.js"></script>
+      <script src="solutions/module5/src/public/public.routes.js"></script>
+      <script src="solutions/module5/src/public/menu/menu.controller.js"></script>
+      <script src="solutions/module5/src/public/menu-category/menu-category.component.js"></script>
+      <script src="solutions/module5/src/public/menu-items/menu-items.controller.js"></script>
+      <script src="solutions/module5/src/public/menu-item/menu-item.component.js"></script>
+
+      <!-- ADMIN SITE -->
+
+      <!--Application files -->
 
 <script src="solutions/app.js"></script>
 </body>

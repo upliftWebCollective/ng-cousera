@@ -4,7 +4,8 @@
     'LunchCheck',
     'ShoppingListCheckOff',
     'NarrowItDown',
-    'MenuApp'
+    'MenuApp',
+    'restaurant'
   ])
     .config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider){
       $stateProvider
@@ -29,7 +30,10 @@
         })
         // State for module4 has been moved to 'solutions/module4/routes.js'
         // This is to complete the assignment as instructed.
-
+        .state('module5-solution', {
+          url: '/module5-solution',
+          templateUrl: 'solutions/module5/index.html',
+        })
     $urlRouterProvider.otherwise('/')
   }])
     .controller('introCtlr', function($scope){
